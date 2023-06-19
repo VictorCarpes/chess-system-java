@@ -6,10 +6,6 @@ public class Position {
 	private int column;
 	
 	//Constructors
-	public Position() {
-		
-	}
-
 	public Position(int row, int column) {
 		this.row = row;
 		this.column = column;
