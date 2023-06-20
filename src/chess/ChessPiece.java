@@ -4,23 +4,30 @@ import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
 
-public abstract class ChessPiece extends Piece{
-	//Atribute
+public abstract class ChessPiece extends Piece {
+	// Atribute
 	private Color color;
-	//Constructor
+
+	// Constructor
 	public ChessPiece(Board board, Color color) {
 		super(board);
 		this.color = color;
 	}
-	//Get
+
+	// Get
 	public Color getColor() {
 		return color;
 	}
-	
-	protected boolean isThereOpponentPiece(Position position) {
-		ChessPiece p = (ChessPiece)getBoard().piece(position);
-		return p != null && p.getColor() != color;
-		
+
+	public ChessPosition getChessPosition() {
+		return ChessPosition.fromPosition(position);
+
 	}
-	
+
+	protected boolean isThereOpponentPiece(Position position) {
+		ChessPiece p = (ChessPiece) getBoard().piece(position);
+		return p != null && p.getColor() != color;
+
+	}
+
 }
